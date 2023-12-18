@@ -57,4 +57,4 @@ const start = async (): Promise<void> => {
   })
 }
 
-start()
+start().then(() => payload.logger.info('Server started successfully!'))
