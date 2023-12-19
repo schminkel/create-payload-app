@@ -1,4 +1,4 @@
-import { slateEditor } from '@payloadcms/richtext-slate'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import type {
   AdapterArguments,
   RichTextElement,
@@ -37,12 +37,7 @@ const richText: RichText = (
                 type: 'richText',
                 name: 'caption',
                 label: 'Caption',
-                editor: slateEditor({
-                  admin: {
-                    elements: [...elements],
-                    leaves: [...leaves],
-                  },
-                }),
+                editor: lexicalEditor({}),
               },
               {
                 type: 'radio',
@@ -97,9 +92,7 @@ const richText: RichText = (
       name: 'richText',
       type: 'richText',
       required: true,
-      editor: slateEditor({
-        admin: slateOptions,
-      }),
+      editor: lexicalEditor({}),
     },
     fieldOverrides || {},
   )
